@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAMBODREDZ LOC'S SALON</title>
+    <style>
+        :root {
+            --rasta-red: #e30b0b;
+            --rasta-yellow: #ffcc00;
+            --rasta-green: #009933;
+            --dark-bg: #111;
+            --light-bg: #fdfdfd;
+            --text-color: #333;
+            font-family: "Poppins", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--dark-bg);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            background: linear-gradient(90deg, var(--rasta-red), var(--rasta-yellow), var(--rasta-green));
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rasta-yellow);
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background: white;
+        }
+
+        @media (max-width:768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background: var(--dark-bg);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 9999;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>MAMBODREDZ LOC'S SALON</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="hero" id="home"
+        style="
+                                                                                                                                                                                                                                                                  background:url('https://images.unsplash.com/photo-1601217375646-12f9fef7b06b?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+                                                                                                                                                                                                                                                                      color:white; text-align:center; padding:120px 20px; position:relative;">
+        <div style="position:relative; z-index:1;">
+            <h2 style="font-size:2.8em; margin-bottom:15px;">Fresh, Authentic & Stylish Locs</h2>
+            <p style="font-size:1.2em;">We bring out the beauty and culture in every dreadlock style.</p>
+        </div>
+        <div style="content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+        </div>
+    </section>
+    <section class="services" id="services" style="padding:60px 20px; text-align:center; background:#fff;">
+        <h2 style="font-size:2em; margin-bottom:30px; color:#009933;">Our Locs Services</h2>
+        <div
+            style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:25px; max-width:900px; margin:auto;">
+            <div style="padding:20px; background:#f9f9f9; border-left:5px solid #e30b0b; border-radius:10px;">Fresh
+                Dreadloc's</div>
+            <div style="padding:20px; background:#f9f9f9; border-left:5px solid #e30b0b; border-radius:10px;">Artificial
+                Dreadloc's</div>
+            <div style="padding:20px; background:#f9f9f9; border-left:5px solid #e30b0b; border-radius:10px;">Bongo
+                Loc's</div>
+            <div style="padding:20px; background:#f9f9f9; border-left:5px solid #e30b0b; border-radius:10px;">Sister's
+                Loc's</div>
+            <div style="padding:20px; background:#f9f9f9; border-left:5px solid #e30b0b; border-radius:10px;">Dreadloc's
+                Retouch</div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery"
+        style="background:linear-gradient(90deg,#e30b0b,#ffcc00,#009933); padding:60px 20px; text-align:center;">
+        <h2 style="font-size:2em; margin-bottom:30px; color:white; text-shadow:1px 1px 4px #000;">Gallery of Our Work
+        </h2>
+        <div
+            style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; max-width:1000px; margin:auto;">
+            <div style="background:white; border-radius:10px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1618188122523-56d7a246b0b4?auto=format&fit=crop&w=800&q=80"
+                    style="width:100%; height:220px; object-fit:cover;">
+                <p style="padding:10px; font-weight:600; color:#009933;">Fresh Dreadlocs Transformation</p>
+            </div>
+            <div style="background:white; border-radius:10px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1596461404969-9ae70b904f94?auto=format&fit=crop&w=800&q=80"
+                    style="width:100%; height:220px; object-fit:cover;">
+                <p style="padding:10px; font-weight:600; color:#009933;">Artificial Locs Style</p>
+            </div>
+            <div style="background:white; border-radius:10px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1619983081523-9e9822c7f36f?auto=format&fit=crop&w=800&q=80"
+                    style="width:100%; height:220px; object-fit:cover;">
+                <p style="padding:10px; font-weight:600; color:#009933;">Bongo Locs Perfection</p>
+            </div>
+        </div>
+    </section>
+    <section id="about" style="padding:60px 20px; text-align:center; background:#fafafa;">
+        <h2 style="font-size:2em; color:#e30b0b; margin-bottom:20px;">About Us</h2>
+        <p style="max-width:700px; margin:auto; font-size:1.1em; color:#444;">
+            Narok Locs Studio is your go-to spot for all dreadlock services in Narok, Kenya.
+            We specialize in creating, maintaining, and styling dreadlocks that match your personality.
+            Our goal is to help you embrace natural beauty and cultural pride through professional hair care.
+        </p>
+    </section>
+
+    <section id="faq" style="padding:60px 20px; background:#fff; max-width:900px; margin:auto;">
+        <h2 style="text-align:center; color:#009933; margin-bottom:30px;">Frequently Asked Questions</h2>
+        <details
+            style="background:#f9f9f9; margin-bottom:10px; border-left:5px solid #ffcc00; border-radius:8px; padding:15px;">
+            <summary><b>Do you offer both male and female dreadlock services?</b></summary>
+            <p>Yes, we style and maintain dreadlocks for both men and women with care and creativity.</p>
+        </details>
+        <details
+            style="background:#f9f9f9; margin-bottom:10px; border-left:5px solid #ffcc00; border-radius:8px; padding:15px;">
+            <summary><b>How often should I retouch my dreadlocks?</b></summary>
+            <p>We recommend a retouch every 4–6 weeks to keep them neat and healthy.</p>
+        </details>
+        <details style="background:#f9f9f9; border-left:5px solid #ffcc00; border-radius:8px; padding:15px;">
+            <summary><b>Can I book an appointment online?</b></summary>
+            <p>Yes, just contact us via WhatsApp or email, and we’ll reserve your slot.</p>
+        </details>
+    </section>
+    <section id="contact" style="background:#fdfdfd; text-align:center; padding:40px 20px;">
+        <h3 style="color:#009933;">📍 Location:</h3>
+        <p>Narok, Kenya</p>
+
+        <h3 style="color:#009933;">🕒 Open Hours:</h3>
+        <p>Everyday from 7:30 AM to 10:00 PM</p>
+
+        <h3 style="color:#009933;">📞 Call or WhatsApp:</h3>
+        <p><a href="tel:+254700000000" style="color:#e30b0b; text-decoration:none; font-weight:600;">+254 700 000
+                000</a></p>
+
+        <h3 style="color:#009933;">📧 Email:</h3>
+        <p><a href="mailto:moffatogutu255@gmail.com"
+                style="color:#e30b0b; text-decoration:none; font-weight:600;">moffatogutu255@gmail.com</a></p>
+    </section>
+    <!-- Floating WhatsApp Icon Button -->
+    <a href="https://wa.me/254745070299" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+    </a>
+    <!-- ===== CONTACT & BOOKING SECTION ===== -->
+    <section id="contact"
+        style="background:linear-gradient(135deg, #ff0000, #ffcc00, #009933); padding:60px 20px; text-align:center; color:#fff;">
+        <h2 style="margin-bottom:30px; font-size:28px;">Book Your Appointment</h2>
+        <p style="max-width:600px; margin:0 auto 30px; color:#fff;">
+            Ready for a new look? Fill in your details and send us your booking directly on WhatsApp.
+        </p>
+
+        <form onsubmit="sendToWhatsApp(event)"
+            style="max-width:500px; margin:0 auto; background:#fff; padding:25px; border-radius:15px; color:#111;">
+            <label for="name" style="display:block; margin-bottom:5px;">Full Name</label>
+            <input type="text" id="name" required
+                style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+
+            <label for="phone" style="display:block; margin-bottom:5px;">Phone Number</label>
+            <input type="tel" id="phone" required
+                style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+
+            <label for="service" style="display:block; margin-bottom:5px;">Select Service</label>
+            <select id="service" required
+                style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+                <option value="">-- Choose a Service --</option>
+                <option>Fresh Dreadloc's</option>
+                <option>Artificial Dreadloc's</option>
+                <option>Bongo Loc's</option>
+                <option>Sister's Loc's</option>
+                <option>Dreadloc's Retouch</option>
+            </select>
+
+            <label for="date" style="display:block; margin-bottom:5px;">Preferred Date</label>
+            <input type="date" id="date"
+                style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;">
+
+            <label for="message" style="display:block; margin-bottom:5px;">Message</label>
+            <textarea id="message" rows="4"
+                style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:8px;"></textarea>
+
+            <button type="submit"
+                style="background:#25D366; color:white; border:none; padding:12px 25px; border-radius:8px; font-size:16px; cursor:pointer;">
+                Send on WhatsApp
+            </button>
+        </form>
+    </section>-->
+    <footer style="background:#111; color:white; text-align:center; padding:25px 15px;">
+        <p>© 2025 Narok Locs Studio | Design by <strong>Moffat Ogutu</strong></p>
+        <p><a href="mailto:moffatogutu255@gmail.com" style="color:#ffcc00;">moffatogutu255@gmail.com</a></p>
+    </footer>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+
+            const phoneNumber = "254745070299"; // 👉 replace with your WhatsApp number
+            const text = `Hello! I'm ${name} (%2B${phone}). I would like to book a ${service} on ${date}.%0A%0AMessage:%0A${message}`;
+
+            window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+        }
+
+    </script>
+</body>
+
+</html>
